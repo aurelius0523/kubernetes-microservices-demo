@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: zuul-gateway
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        editor: vscode
+        app: zuul-gateway-label
+    spec:
+      containers:
+      - name: name
+        image: spring-zuul-gateway:0.0.1
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 8070

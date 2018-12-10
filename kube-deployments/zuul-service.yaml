@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  zuul-service
+spec:
+  selector:
+    app:  zuul-gateway-label
+  type:  LoadBalancer
+  ports:
+    - name:  zuul-gateway-port
+      port:  80
+      protocol: TCP
+      targetPort:  8070
