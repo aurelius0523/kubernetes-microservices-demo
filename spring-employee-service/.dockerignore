@@ -1,0 +1,5 @@
+# Ignore all files
+**
+
+# Include only the war file that we're interested in in the context
+!/target/*.war
