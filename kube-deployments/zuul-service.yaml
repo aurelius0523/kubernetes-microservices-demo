@@ -2,12 +2,19 @@ kind: Service
 apiVersion: v1
 metadata:
   name:  zuul-service
+  annotations:
+    getzuul.io/config: |
+    apiVersion: zuulservice/v0
+    kind: Mapping
+    name: zuul-service-annotation-name
+    prefix: /employee/
+    service: employee-service:8060
 spec:
   selector:
     app:  zuul-gateway-label
   type:  LoadBalancer
   ports:
     - name:  zuul-gateway-port
-      port:  80
+      port:  8070
       protocol: TCP
       targetPort:  8070

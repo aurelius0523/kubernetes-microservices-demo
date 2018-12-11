@@ -1,8 +1,15 @@
 zuul:
   routes:
-    employee:
-      url: http://localhost:8080
+    employee-service:
+      path: /employee/**
+      serviceId: employee-service
 server:
   port: 8070
   
-      
+ribbon:
+  eureka:
+    enabled: false
+
+employee-service:
+  ribbon:
+    listOfServers: employee-service:8060

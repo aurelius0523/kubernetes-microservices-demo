@@ -4,6 +4,6 @@ LABEL maintainer="aurelius0523/kim.loong.tan"
 
 ADD ./target/spring-zuul-gateway-0.0.1-SNAPSHOT.war /
 
-EXPOSE 8080
+EXPOSE 8070
 
 CMD ["java", "-jar", "spring-zuul-gateway-0.0.1-SNAPSHOT.war"]

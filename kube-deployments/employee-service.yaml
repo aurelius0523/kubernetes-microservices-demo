@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: employee-service
+spec:
+  selector:
+    app: employee-service-label
+  type: ClusterIP 
+  ports:
+  - name: employee-service-port
+    port: 8060
+    targetPort: 8060
