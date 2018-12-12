@@ -12,4 +12,4 @@ ribbon:
 
 employee-service:
   ribbon:
-    listOfServers: employee-service:8060
+    listOfServers: ${employeeServiceName}

@@ -16,3 +16,6 @@ spec:
         imagePullPolicy: Never
         ports:
           - containerPort: 8070
+        env:
+          - name: employeeServiceName
+            value: "employee-service:8060"
