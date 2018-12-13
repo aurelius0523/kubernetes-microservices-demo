@@ -1,8 +1,12 @@
 zuul:
   routes:
+    payroll-service:
+      path: /payroll/**
+      serviceId: payroll-service
     employee-service:
       path: /employee/**
       serviceId: employee-service
+      
 server:
   port: 8070
   
@@ -10,6 +14,11 @@ ribbon:
   eureka:
     enabled: false
 
+payroll-service:
+  ribbon:
+    listOfServers: ${payrollServiceName}
+
 employee-service:
   ribbon:
     listOfServers: ${employeeServiceName}
+    

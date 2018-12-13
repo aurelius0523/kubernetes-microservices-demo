@@ -1,0 +1,6 @@
+url:
+  employee:
+    service: ${urlEmployeeService}
+    
+server:
+  port: 8050

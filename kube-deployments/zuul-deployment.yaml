@@ -19,3 +19,5 @@ spec:
         env:
           - name: employeeServiceName
             value: "employee-service:8060"
+          - name: payrollServiceName
+            value: "payroll-service:8050"

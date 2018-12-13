@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: payroll-service
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        editor: vscode
+        app: payroll-service-label
+    spec:
+      containers:
+      - name: payroll-service-name
+        image: spring-payroll-service:0.0.1
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 8050
+        env:
+          - name: urlEmployeeService
+            value: "http://employee-service"
