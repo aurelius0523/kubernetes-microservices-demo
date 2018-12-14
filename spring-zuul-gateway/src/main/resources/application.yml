@@ -1,16 +1,18 @@
 zuul:
   routes:
     payroll-service:
-      path: /payroll/**
-      serviceId: payroll-service
+      path: "/payroll/**"
+      serviceId: "payroll-service"
     employee-service:
-      path: /employee/**
-      serviceId: employee-service
+      path: "/employee/**"
+      serviceId: "employee-service"
       
 server:
   port: 8070
   
 ribbon:
+  ConnectTimeout: 50000
+  ReadTimeout: 50000
   eureka:
     enabled: false
 
@@ -22,3 +24,12 @@ employee-service:
   ribbon:
     listOfServers: ${employeeServiceName}
     
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 150000
