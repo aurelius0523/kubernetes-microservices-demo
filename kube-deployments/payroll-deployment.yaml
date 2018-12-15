@@ -18,4 +18,4 @@ spec:
           - containerPort: 8050
         env:
           - name: urlEmployeeService
-            value: "http://employee-service"
+            value: "http://employee-service:8060"
